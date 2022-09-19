@@ -19,9 +19,6 @@
 # There are a few things you will have to discover for yourself for this game!
 
 
-
-
-
 import random
 digits = list(range(10))
 random.shuffle(digits)
@@ -31,20 +28,22 @@ cg_string=''
 for char in computer_guess:
     cg_string += str(char)
 
-print("******* Welcome to CODE BREAKER GAME !! ******* \n\n1. The computer will think of 3 digit number that has no repeating digits.")
+print("\n\n\n******* Welcome to CODE BREAKER GAME !! ******* \n\n1. The computer will think of 3 digit number that has no repeating digits.")
 print("2. You will then guess a 3 digit number ")
 
 #print(cg_string)
 
 
 for i in range(1000):
-    guess = input("What is your guess?\n")
+    guess = input("\n\nWhat is your 3 digit guess?\n")
     #print(guess)
     if len(guess) != 3:
         print("please write 3 digit number")
+    elif guess.isdigit() == False:
+        print("Please give a number")
     else:
         if guess[0]==cg_string[0] and guess[1]==cg_string[1] and guess[2]==cg_string[2]:
-            print("perfect Match: You've guessed perfect match for all digits")
+            print("Perfect Match: You've guessed perfect match for all digits")
             exit()
 
 
