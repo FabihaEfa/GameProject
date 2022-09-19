@@ -40,21 +40,22 @@ print("2. You will then guess a 3 digit number ")
 for i in range(1000):
     guess = input("What is your guess?\n")
     #print(guess)
-
-
-    if guess[0]==cg_string[0] and guess[1]==cg_string[1] and guess[2]==cg_string[2]:
-        print("perfect Match: You've guessed perfect match for all digits")
-        exit()
-
-
-    elif guess[0]==cg_string[0] or guess[1]==cg_string[1] or guess[2]==cg_string[2]:
-        print("Match: You've guessed a correct number in the correct position")
-
-    elif guess[0]==cg_string[1] or guess[1]==cg_string[2] or guess[2]==cg_string[0] or guess[0]==cg_string[2] or guess[1]==cg_string[0] or guess[1]==cg_string[1] or guess[2]==cg_string[1]:
-        print("Close: You've guessed a correct number but in the wrong position")
-
+    if len(guess) != 3:
+        print("please write 3 digit number")
     else:
-        print("Nope: You haven't guess any of the numbers correctly")
+        if guess[0]==cg_string[0] and guess[1]==cg_string[1] and guess[2]==cg_string[2]:
+            print("perfect Match: You've guessed perfect match for all digits")
+            exit()
+
+
+        elif guess[0]==cg_string[0] or guess[1]==cg_string[1] or guess[2]==cg_string[2]:
+            print("Match: You've guessed a correct number in the correct position")
+
+        elif guess[0]==cg_string[1] or guess[1]==cg_string[2] or guess[2]==cg_string[0] or guess[0]==cg_string[2] or guess[1]==cg_string[0] or guess[1]==cg_string[1] or guess[2]==cg_string[1]:
+            print("Close: You've guessed a correct number but in the wrong position")
+
+        else:
+            print("Nope: You haven't guess any of the numbers correctly")
 
 
 
